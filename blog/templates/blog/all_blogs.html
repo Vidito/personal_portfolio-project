@@ -1,0 +1,24 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+</header>
+<div class="blogInfo">
+<h1>Blog</h1>
+
+<h3>Vahid has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h3>
+</div>
+<div class="blogs">
+{% for blog in blogs %}
+  <div class="blog">
+    <a href="{% url 'blog:detail' blog.id %}">
+      <h2>{{ blog.title }}</h2>
+    </a>
+    <h5 class="date">{{ blog.date|date:'M d Y'|upper }}</h5>
+    <p>{{ blog.description|striptags|truncatechars:100 }}</p>
+  </div>
+
+{% endfor %}
+</div>
+{% endblock %}

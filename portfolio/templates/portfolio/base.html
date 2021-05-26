@@ -1,0 +1,68 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <script src="https://kit.fontawesome.com/12898a6bf1.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href='{% static "portfolio/style.css" %}'>
+
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/NMk0fq33/favicon.png">
+
+  <title>Vahid Niamadpour</title>
+</head>
+
+<body>
+<header>
+  <div class="navbar">
+    <div class="logo">
+    <a href="{% url 'home' %}"> <span class="v"> V  </span></a>
+    </div>
+    <!--  -->
+    <button class="ham">
+      <span class="menuIcon">Menu</span>
+      <span class="xIcon ">
+        close
+      </span>
+    </button>
+    <!--  -->
+    <ul class="menu">
+      <li><a href="{% url 'home' %}" class="menuLink active"> Home</a></li>
+      <li class="nav-item">
+        <a class="menuLink" href="{% static 'portfolio/cv.pdf' %}">Resume</a>
+      </li>
+      <li class="nav-item">
+            <a class="menuLink" href="https://www.linkedin.com/in/vahid-niamadpour-a3ba1a205/" target="_blank">LinkedIn</a>
+      </li>
+      <li> <a href="{% url 'blog:all_blogs' %}" class="menuLink blogButton">Blog</a>
+      </li>
+    </ul>
+  </div>
+ 
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+  <section class="bottom">
+    <h1 class="bottomLogo v">V.</h1>
+    <p>Do not follow where the path leads, rather go where there is no path and leave a trail.
+    
+    <br> D. Perkins</p>
+    <div class="logos"><a href="https://www.facebook.com/vahada.navada/" target="_blank"><i class="fab fa-facebook-f"></i></a> &#8287; &#8287;<a href="https://twitter.com/VahidNia" target="_blank"><i
+          class="fab fa-twitter"></i></a> &#8287; &#8287;<a href="https://www.linkedin.com/in/vahid-niamadpour-a3ba1a205/" target="_blank"><i class="fab fa-linkedin-in"></i></a> &#8287;
+      &#8287;</div>
+  </section>
+    <footer>
+      <p>Copyright © <span id="copyright-year"></span> <span class="v">Vahid</span></p>
+    </footer>
+    <script src="{% static 'portfolio/script.js' %}"></script>
+    <script>
+      document.querySelector('#copyright-year').innerText = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>

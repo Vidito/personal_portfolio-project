@@ -1,0 +1,191 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="hero">
+  <div class="heroContent">
+    <div class="heroTitle">
+      <h1>I'm <span class="v">V</span>ahid</h1>
+    </div>
+    <div class="heroText">
+      <h3>A Junior Full-Stack Developer</h3>
+    </div>
+    <div class="heroButton">
+      <a href="#contact"><button>Contact Me</button></a>
+    </div>
+  </div>
+
+    <div class="heroImage">
+      <img src="https://i.postimg.cc/pLW1CDJV/IMG-20191027-093159-721.jpg" alt="">
+    </div>
+    </div>
+    <div class="arrow">
+      <img src="https://i.postimg.cc/jd6CJ7v6/arrow.png" />
+    </div>
+    </header>
+<!-- About Sectionnnnnnnnnnnnnnnnnnnnnnnnnnn -->
+<section id="about">
+  <div class="aboutContainer">
+    <div class="leftContainer">
+      <div class="aboutTitle">
+        <h1 class="line">About Me</h1>
+      </div>
+    </div>
+    <div class="rightContainer">
+      <div class="aboutText">
+        <p>Hi there! I'm Vahid and I am a junior web developer
+          I started my journey last year and since then I have learnt:<br> <br>
+          html, css, Bootstrap, Javascript, Wordpress, Python, Django, basic React, and basic PHP.</p>
+      </div>
+      <div class="aboutBtn">
+        <a href="#works"><button class="aboutBtn1">View Works</button></a>
+       <a href="#contact"> <button class="aboutBtn2">Contact Me</button></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- services sectionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn -->
+<section id="services">
+  <div class="servicesContainer">
+    <div class="servicesText">
+      <h1><span class="line"> Works</span></h1>
+      <p>Current website has been created using Django and the following info comes from the database. These are my previous Wordpress websites.
+      </p>
+
+    </div>
+    <div class="servicesCards">
+      <div class="cards">
+        <div class="card card2">
+          {% for project in projects %}
+          <div>
+            {% if project.url %}
+            <a href="{{ project.url }}">
+              <img src="{{ project.image.url }}">
+            </a>
+            {% else %}
+            <img src="{{ project.image.url }}">
+            {% endif %}
+            <h3>{{ project.title }}</h3>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="works">
+  <div class="worksContainer">
+
+    <div class="servicesText">
+      <h1><span class="line"> Image Gallery</span></h1>
+      <p>Me and My Certificates</p>
+    </div>
+
+    <div class="griddy">
+      <div class="grid-container">
+        <div class="one cardhover"><img src="https://i.postimg.cc/3NvHJTzd/arnhem1.jpg"
+            alt="">
+          <div class="firstpopup"></i>
+            <h2>Taken in Arnhem</h2>
+            <p>Thinking...</p>
+          </div>
+        </div>
+        <div class="two cardhover"><img src="https://i.postimg.cc/7brr5RyX/me.jpgg" alt="">
+          <div class="popup">
+            <h2>Taken in Iran</h2>
+            <p>With Friends</p>
+          </div>
+        </div>
+        <div class="three cardhover"><img src="https://about.me/cdn-cgi/image/q=80,dpr=1,f=auto,fit=cover,w=1200,h=630,gravity=0.215x0.26/https://assets.about.me/background/users/n/i/a/niamadpour_1573736501_428.jpg"
+            alt="">
+          <div class="popup"> 
+            <h2>In Arnhem</h2>
+            <p>Thanking Again :D</p>
+          </div>
+        </div>
+        <div class="four cardhover"><img
+            src="https://hubstaff-talent.s3.amazonaws.com/avatars/d32b2a117730974c53f1c9d0c3772b2b" alt="">
+          <div class="popup">
+            <h2>The young Me</h2>
+            <p>In Amsterdam</p>
+          </div>
+        </div>
+        <div class="seven cardhover"><img src="https://i.postimg.cc/sxLBhX8V/hubspot.png" alt="">
+          <div class="popup">
+            <h2>Social Media Certificate</h2>
+            <p>Issued by Hubspot</p>
+          </div>
+        </div>
+        <div class="five cardhover"><img src="https://i.postimg.cc/Hnncn56Z/graphic.jpg"
+            alt="">
+          <div class="popup"> 
+            <h2>Graphic design</h2>
+            <p>Coursera</p>
+          </div>
+        </div>
+        <div class="six cardhover"><img src="https://i.postimg.cc/q7rNnWmC/future.png"
+            alt="">
+          <div class="popup">
+            <h2>UX Design Certificate</h2>
+            <p>FutureLearn</p>
+          </div>
+        </div>
+        
+        <div class="eight cardhover"><img
+            src="https://i.postimg.cc/ZRVvJjxv/php.jpg" alt="">
+          <div class="popup"> 
+            <h2>PHP Certificate</h2>
+            <p>University of Michigan / Coursera</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="question">
+  <h1><span class="line"> Do You Have Any Projects In Mind?</span></h1> <br>
+  <a class="blogButton" href = "mailto: niamadpour@gmail.com">Hire me</a>
+</section>
+<section class="contact" id="contact">
+  <h1><span class="line"> Contact Me</span></h1>
+  <div class="infoContact">
+    <div class="info">
+
+      <h3>Contact Info</h3> <br>
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i> Vahid, Arnhem, NL</li> <br>
+        <li><i class="fas fa-envelope"></i> niamadpour@gmail.com</li> <br>
+        <li> <i class="fas fa-phone"></i> +31645558718<br>
+        <li><i class="fas fa-wifi"></i> coductor.com</li> <br> <br>
+
+      </ul>
+    </div>
+    <div class="contactForm">
+
+      <form action="" >
+        <label for="name">NAME</label>
+        <input type="text" id="name" name="name" placeholder="Type your name" disabled>
+        <div class="phone-email">
+          <div class="phone">
+            <label for="phone">PHONE NUMBER</label>
+            <input disabled type="text" id="phone" name="phone" placeholder="Type your phone number">
+          </div>
+          <div class="email">
+            <label for="email">EMAIL</label>
+            <input disabled type="text" id="email" name="email" placeholder="Type your email adress">
+          </div>
+        </div>
+        <label for="message">YOUR MESSAGE</label>
+        <textarea disabled name="message" class="message" id="message" cols="40" rows="8"></textarea>
+        <input disabled type="submit" value="SEND MESSAGE">
+      </form>
+
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}
